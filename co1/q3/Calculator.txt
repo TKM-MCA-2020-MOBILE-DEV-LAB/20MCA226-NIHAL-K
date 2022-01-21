@@ -1,0 +1,203 @@
+XML CODE :
+
+<?xml version="1.0" encoding="utf-8"?>
+<androidx.constraintlayout.widget.ConstraintLayout
+    xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+    <EditText
+        android:id="@+id/fn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="99dp"
+        android:layout_marginTop="68dp"
+        android:layout_marginEnd="102dp"
+        android:layout_marginBottom="32dp"
+        android:ems="10"
+        android:hint="First number"
+        android:inputType="textPersonName"
+        app:layout_constraintBottom_toTopOf="@+id/sn"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <EditText
+        android:id="@+id/sn"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="101dp"
+        android:layout_marginTop="27dp"
+        android:layout_marginEnd="100dp"
+        android:ems="10"
+        android:hint="Second number"
+        android:inputType="textPersonName"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="0.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/fn" />
+
+    <TextView
+        android:id="@+id/res"
+        android:layout_width="211dp"
+        android:layout_height="49dp"
+        android:layout_marginStart="100dp"
+        android:layout_marginTop="144dp"
+        android:layout_marginEnd="101dp"
+        android:ems="10"
+        android:hint="Result"
+        android:inputType="textPersonName"
+        android:textAlignment="center"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="20sp"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sn" />
+
+    <Button
+        android:id="@+id/mul"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="40dp"
+
+        android:onClick="mul"
+        android:text="×"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/res"
+        app:layout_constraintStart_toEndOf="@+id/sub"
+        app:layout_constraintTop_toBottomOf="@+id/sn"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/div"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginTop="40dp"
+        android:layout_marginEnd="12dp"
+        android:onClick="div"
+        android:text="÷"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/res"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintHorizontal_bias="1.0"
+        app:layout_constraintStart_toEndOf="@+id/mul"
+        app:layout_constraintTop_toBottomOf="@+id/sn"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/sub"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="40dp"
+        android:onClick="sub"
+        android:text="−"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/res"
+        app:layout_constraintStart_toEndOf="@+id/add"
+        app:layout_constraintTop_toBottomOf="@+id/sn"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <Button
+        android:id="@+id/add"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_marginStart="12dp"
+        android:layout_marginTop="40dp"
+        android:onClick="sum"
+        android:text="+"
+        android:textSize="20sp"
+        app:layout_constraintBottom_toTopOf="@+id/res"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toBottomOf="@+id/sn"
+        app:layout_constraintVertical_bias="0.0" />
+
+    <TextView
+        android:id="@+id/textView"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:text="Calculator"
+        android:textColor="@android:color/holo_red_dark"
+        android:textSize="34sp"
+        app:layout_constraintBottom_toBottomOf="parent"
+        app:layout_constraintEnd_toEndOf="parent"
+        app:layout_constraintStart_toStartOf="parent"
+        app:layout_constraintTop_toTopOf="parent"
+        app:layout_constraintVertical_bias="0.023" />
+
+
+</androidx.constraintlayout.widget.ConstraintLayout>
+
+
+
+JAVA CODE :
+
+
+package com.example.calculator;
+
+
+import androidx.appcompat.app.AppCompatActivity;
+import android.os.Bundle;
+import android.view.View;
+import android.widget.EditText;
+import android.widget.TextView;
+
+public class MainActivity extends AppCompatActivity {
+    EditText num1,num2;
+    TextView result;
+    int n1,n2;
+    String s1,s2,s3;
+    @Override
+    protected void onCreate(Bundle savedInstanceState) {
+        super.onCreate(savedInstanceState);
+        setContentView(R.layout.activity_main);
+    }
+    public void getNum()
+    {
+        num1 = (EditText) findViewById(R.id.fn);
+        num2 = (EditText) findViewById(R.id.sn);
+        result = (TextView) findViewById(R.id.res);
+        s1 = num1.getText().toString();
+        s2 = num2.getText().toString();
+    }
+    public void sum(View v)
+    {
+        getNum();
+        n1 = Integer.parseInt(s1);
+        n2 = Integer.parseInt(s2);
+        s3 = String.valueOf(n1+n2);
+        result.setText(s3);
+    }
+    public void sub(View v)
+    {
+        getNum();
+        n1 = Integer.parseInt(s1);
+        n2 = Integer.parseInt(s2);
+        s3 = String.valueOf(n1-n2);
+        result.setText(s3);
+    }
+    public void mul(View v)
+    {
+        getNum();
+        n1 = Integer.parseInt(s1);
+        n2 = Integer.parseInt(s2);
+        s3 = String.valueOf(n1*n2);
+        result.setText(s3);
+    }
+
+    public void div(View v)
+    {
+        getNum();
+        n1 = Integer.parseInt(s1);
+        n2 = Integer.parseInt(s2);
+        s3 = String.valueOf(n1/n2);
+        result.setText(s3);
+    }
+};
