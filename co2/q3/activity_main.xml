@@ -1,0 +1,70 @@
+<?xml version="1.0" encoding="utf-8"?>
+<RelativeLayout xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    tools:context=".MainActivity">
+
+
+    <ImageView
+        android:id="@+id/imageView3"
+        android:layout_width="309dp"
+        android:layout_height="130dp"
+        app:srcCompat="@drawable/download" />
+
+    <ImageView
+        android:id="@+id/imageView7"
+        android:layout_width="143dp"
+        android:layout_height="235dp"
+        android:layout_below="@+id/imageView3"
+        android:layout_alignParentLeft="false"
+        android:layout_marginLeft="100dp"
+        android:layout_marginTop="83dp"
+        app:srcCompat="@drawable/pro" />
+
+    <TextView
+        android:id="@+id/editText1"
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+
+        android:layout_alignParentBottom="false"
+        android:layout_marginLeft="134dp"
+        android:layout_marginBottom="11dp"
+        android:layout_below="@id/imageView7"
+        android:ems="10"
+        android:fontFamily="sans-serif-black"
+        android:inputType="textPersonName"
+        android:text="NIHAL K"
+        android:textSize="20dp" />
+
+    <CheckBox
+        android:id="@+id/check1"
+        android:layout_width="217dp"
+        android:layout_height="26dp"
+        android:layout_below="@id/imageView7"
+        android:layout_marginTop="63dp"
+        android:layout_marginBottom="56dp"
+        android:text="Log In" />
+
+    <CheckBox
+        android:layout_width="217dp"
+        android:layout_height="26dp"
+        android:layout_alignTop="@+id/check1"
+        android:layout_marginTop="40dp"
+        android:layout_marginBottom="56dp"
+        android:text="Find your Account" />
+
+    <EditText
+        android:layout_width="wrap_content"
+        android:layout_height="wrap_content"
+        android:layout_alignParentBottom="true"
+        android:layout_centerInParent="true"
+        android:layout_marginBottom="72dp"
+
+        android:text="Create New Account"
+        android:textColor="@color/black"
+        android:textSize="20dp" />
+
+
+</RelativeLayout>
